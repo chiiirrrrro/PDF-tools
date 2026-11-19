@@ -24,12 +24,10 @@
     出力ファイル名：
     <input type="text" id="outputName" placeholder="例：20XX1225_recital" />
   </label>
-
-  <label>
-    PDFファイルを追加：
-    <input type="file" id="pdfInput" accept="application/pdf" multiple />
-  </label>
-
+  <label for="pdfInput" class="file-select-btn">PDFファイルを追加</label>
+  <input type="file" id="pdfInput" class="file-input-hidden" accept="application/pdf" multiple />
+  
+  <p id="fileCount"></p>
   <div id="file-list" class="list-box"></div>
 
   <button id="mergeBtn" type="button">PDFを作成</button>
