@@ -21,8 +21,6 @@ function renderList() {
   }
 
   files.forEach((file, index) => {
-
-  files.forEach((file, index) => {
     const row = document.createElement('div');
 
     const nameSpan = document.createElement('span');
