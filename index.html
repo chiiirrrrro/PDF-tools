@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF分割＆ZIP作成</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <link rel="stylesheet" href="../common.css" />
+  <link rel="stylesheet" href="./splitter.css" />
+</head>
+<body>
+  <h1>PDF分割＆ZIP作成</h1>
+  <h3>🎷パート譜作成が簡単に！</h3>
+  <h4>PDFをページ指定でパートごとに分けて、<br>
+    ZIPでまとめて一括ダウンロード！<br>
+    手入力や自動補完機能もバッチリ。</h4>
+
+  <label>曲名：<input type="text" id="title" /></label>
+
+  <label>
+    PDFファイルを選択：
+    <input type="file" id="pdfFile" accept="application/pdf" />
+  </label>
+  <p id="pageCount"></p>
+
+  <div class="option-setting">
+    <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
+      <input type="checkbox" id="useNumbering" checked style="margin-right: 8px;">
+      ファイル名にナンバリングを追加
+    </label>
+  </div>
+
+  <div id="parts-box">
+    <div id="parts-container"></div>
+    <div class="part-actions">
+      <button id="addPartBtn" type="button">パートを追加</button>
+      <button id="addBigBandBtn" type="button" class="secondary-btn">ビッグバンド基本編成を一括追加</button>
+    </div>
+  </div>
+
+  <button id="splitBtn" type="button">分割＆ZIP作成</button>
+
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <p id="status"></p>
+
+  <div>作成者名:ちー(X:<a href="https://x.com/chiiirrrrro" target="_blank">@chiiirrrrro</a>)</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
