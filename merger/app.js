@@ -1,5 +1,6 @@
 const pdfInput = document.getElementById('pdfInput');
 const fileList = document.getElementById('file-list');
+const fileCount = document.getElementById('fileCount');
 const status = document.getElementById('status');
 const progressBar = document.getElementById('progress-bar');
 const outputNameInput = document.getElementById('outputName');
@@ -7,10 +8,19 @@ const outputNameInput = document.getElementById('outputName');
 let files = [];
 
 function renderList() {
+  if (!fileList) return;
   fileList.innerHTML = '';
+
+  if (fileCount) {
+    fileCount.textContent = files.length > 0 ? `追加済み：${files.length}件` : '';
+  }
+
   files.forEach((file, index) => {
     const row = document.createElement('div');
-    row.textContent = file.name;
+
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = file.name;
+    row.appendChild(nameSpan);
 
     const upBtn = document.createElement('button');
     upBtn.type = 'button';
@@ -50,15 +60,17 @@ function renderList() {
   });
 }
 
-pdfInput.addEventListener('change', () => {
-  if (pdfInput.files.length > 0) {
-    for (const file of pdfInput.files) {
-      files.push(file);
+if (pdfInput) {
+  pdfInput.addEventListener('change', () => {
+    if (pdfInput.files && pdfInput.files.length > 0) {
+      for (const file of pdfInput.files) {
+        files.push(file);
+      }
+      renderList();
+      pdfInput.value = '';
     }
-    renderList();
-    pdfInput.value = '';
-  }
-});
+  });
+}
 
 document.getElementById('mergeBtn').addEventListener('click', async () => {
   if (files.length < 2) {
