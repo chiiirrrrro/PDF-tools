@@ -21,7 +21,6 @@ function renderList() {
   }
 
   files.forEach((file, index) => {
-    // ...既存の行生成処理はそのまま...
 
   files.forEach((file, index) => {
     const row = document.createElement('div');
@@ -80,6 +79,20 @@ if (pdfInput) {
   });
 }
 
+const clearBtn = document.getElementById('clearBtn');
+if (clearBtn) {
+  clearBtn.addEventListener('click', () => {
+    files = [];
+    renderList();
+    if (status) {
+      status.textContent = '';
+    }
+    if (progressBar) {
+      progressBar.style.width = '0%';
+    }
+  });
+}
+  
 document.getElementById('mergeBtn').addEventListener('click', async () => {
   if (files.length < 2) {
     status.textContent = 'PDFを2つ以上追加してください';
