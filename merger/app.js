@@ -34,6 +34,12 @@ function renderList() {
       }
     };
 
+    document.getElementById('clearBtn').addEventListener('click', () => {
+  selectedFiles.forEach(item => URL.revokeObjectURL(item.previewUrl));
+  selectedFiles = [];
+  renderFileList();
+});
+
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
     removeBtn.textContent = '削除';
