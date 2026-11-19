@@ -15,6 +15,14 @@ function renderList() {
     fileCount.textContent = files.length > 0 ? `追加済み：${files.length}件` : '';
   }
 
+  if (files.length === 0) {
+    fileList.innerHTML = '<p class="empty-msg">上の「ファイルを選択」からPDFを追加してください。</p>';
+    return;
+  }
+
+  files.forEach((file, index) => {
+    // ...既存の行生成処理はそのまま...
+
   files.forEach((file, index) => {
     const row = document.createElement('div');
 
