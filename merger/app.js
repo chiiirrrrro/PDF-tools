@@ -55,7 +55,6 @@ pdfInput.addEventListener('change', () => {
     for (const file of pdfInput.files) {
       files.push(file);
     }
-    status.textContent = '';
     renderList();
     pdfInput.value = '';
   }
