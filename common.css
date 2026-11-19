@@ -183,17 +183,19 @@ button.danger-btn:hover {
 
 .file-select-btn {
   display: inline-block;
-  font-size: 0.95rem;
-  padding: 6px 12px;
-  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 5px 11px;
+  border-radius: 4px;
   cursor: pointer;
-  background: #1976d2;
-  color: white;
-  font-weight: 600;
-  transition: background-color 0.3s;
+  background: #f1f3f4;
+  color: #222;
+  border: 1px solid #9aa0a6;
+  font-weight: 500;
+  transition: background-color 0.2s, border-color 0.2s;
   margin-top: 8px;
 }
 
 .file-select-btn:hover {
-  background: #0d47a1;
+  background: #e8eaed;
+  border-color: #70757a;
 }
