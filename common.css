@@ -11,12 +11,18 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
 select,
 input[type="number"],
 input[type="text"] {
-  padding: 4px 5px;
+  padding: 4px 6px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 0.9rem;
 }
 
@@ -36,12 +42,52 @@ button:hover {
   background: #0d47a1;
 }
 
+button.small-btn {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
 button.secondary-btn {
   background: #455a64;
 }
 
 button.secondary-btn:hover {
   background: #263238;
+}
+
+button.neutral-btn {
+  background: #757575;
+}
+
+button.neutral-btn:hover {
+  background: #424242;
+}
+
+button.danger-btn {
+  background: #f44336;
+}
+
+button.danger-btn:hover {
+  background: #d32f2f;
+}
+
+.list-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.option-setting {
+  margin: 15px 0;
+  padding: 10px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 #progress-container {
@@ -64,19 +110,5 @@ button.secondary-btn:hover {
 
 #status {
   font-weight: 500;
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin: 10px 0 6px;
-  font-weight: 600;
-}
-
-.option-setting {
-  margin: 15px 0;
-  padding: 10px;
-  background: #e3f2fd;
-  border-radius: 8px;
-  display: inline-block;
+  margin: 8px 0 10px;
 }
