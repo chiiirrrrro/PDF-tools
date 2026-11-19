@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF合体</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <link rel="stylesheet" href="../common.css" />
+  <link rel="stylesheet" href="./merger.css" />
+</head>
+<body>
+
+  <h1>PDF合体</h1>
+  <h3>🎺セトリ順に並べて、合体！</h3>
+  <h4>PDFを順番に並べて、<br>
+    一枚のファイルとしてダウンロード！<br>
+    ファイル名称も設定可能。</h4>
+
+  <label>
+    出力ファイル名：
+    <input type="text" id="outputName" placeholder="例：20XX1225_recital" />
+  </label>
+
+  <label>
+    PDFファイルを追加：
+    <input type="file" id="pdfInput" accept="application/pdf" multiple />
+  </label>
+
+  <div id="file-list" class="list-box"></div>
+
+  <button id="mergeBtn" type="button">PDFを作成</button>
+
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <p id="status"></p>
+
+  <div>作成者名:ちー(X:<a href="https://x.com/chiiirrrrro" target="_blank">@chiiirrrrro</a>)</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
