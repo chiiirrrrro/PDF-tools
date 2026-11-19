@@ -112,3 +112,67 @@ button.danger-btn:hover {
   font-weight: 500;
   margin: 8px 0 10px;
 }
+.tool-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tool-nav a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #e9eef5;
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tool-nav a:hover {
+  background: #cbd5e1;
+}
+
+.tool-nav a.active {
+  background: #1976d2;
+  color: #fff;
+}
+
+.tool-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  max-width: 760px;
+  margin-top: 12px;
+}
+
+.tool-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 14px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tool-card:hover {
+  border-color: #1976d2;
+  transform: translateY(-2px);
+}
+
+.tool-card h2 {
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+  color: #1976d2;
+}
+
+.tool-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #555;
+}
