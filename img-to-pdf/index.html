@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>画像からPDF作成</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <link rel="stylesheet" href="../common.css" />
+  <link rel="stylesheet" href="./img-to-pdf.css" />
+</head>
+<body>
+  <h1>画像からPDF作成</h1>
+  <h3>画像ファイルをまとめてPDF化！</h3>
+  <h4>PNGやJPEGなどの画像を選択して、<br>
+    順番通りに1つのPDFへ一括変換！<br>
+    ページの並べ替えやファイル名自動補完機能も。</h4>
+
+  <label>出力ファイル名：<input type="text" id="title" placeholder="例：楽譜まとめ" /></label>
+
+  <label>
+    画像ファイルを選択（複数可）：
+    <input type="file" id="imageFiles" accept="image/png, image/jpeg, image/webp" multiple />
+  </label>
+  <p id="fileCount"></p>
+
+  <div class="option-setting">
+    <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
+      <input type="checkbox" id="fitA4" style="margin-right: 8px;">
+      全ページをA4縦サイズに統一する（オフの場合は画像の元サイズ）
+    </label>
+  </div>
+
+  <div id="images-box" class="list-box">
+    <div id="images-container">
+      <p class="empty-msg">上の「ファイルを選択」から画像を追加してください。</p>
+    </div>
+    <button id="clearBtn" type="button" class="neutral-btn small-btn">すべてクリア</button>
+  </div>
+
+  <button id="convertBtn" type="button">PDFを作成＆ダウンロード</button>
+
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <p id="status"></p>
+
+  <div>作成者名:ちー(X:<a href="https://x.com/chiiirrrrro" target="_blank">@chiiirrrrro</a>)</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
